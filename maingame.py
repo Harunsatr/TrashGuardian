@@ -9,13 +9,13 @@ screen = pygame.display.set_mode(size) # Membuat layar permainan dengan ukuran y
 pygame.display.set_caption("Trash Guardian") # Memberi judul pada jendela permainan
 done = False # Variabel untuk menentukan apakah permainan sudah selesai atau belum
 clock = pygame.time.Clock() # Objek clock untuk mengontrol kecepatan permainan
-icon = pygame.image.load('Kerapu.png') # Mengubah icon permainan
+icon = pygame.image.load('icon.ico') # Mengubah icon permainan
 pygame.display.set_icon(icon) # Menampilkan icon permainan
 
 # Defines general colours
 SKY = (150, 240, 255) # Warna langit 
 GRASS = (126, 200, 80)
-IVORY = (250, 250, 235)
+IVORY = (223, 231, 238)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 GREEN = (0, 255, 0)
@@ -187,7 +187,6 @@ while not done and start == 0:
     # Tracks user events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            print("User has quit the game.")
             done = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
@@ -210,7 +209,6 @@ while not done and start == 1:
     # Tracks user events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            print("User has quit the game.")
             done = True
 
         if event.type == pygame.KEYDOWN:
@@ -275,9 +273,9 @@ while not done and start == 1:
     if key == "Right" and binSucc == False:  # Adds velocity rightward, normal speed
         binvelocityx += 1.0
     if key == "Left" and binSucc == True:  # Adds velocity leftward, succ speed
-        binvelocityx += -0.935
+        binvelocityx += -1.0
     if key == "Right" and binSucc == True:  # Adds velocity rightward, succ speed
-        binvelocityx += 0.935
+        binvelocityx += 1.0
 
     if binSucc == True and binvelocityx > 2.4:  # Sets a cap on rightward velocity at 2.4 while succing
         binvelocityx = 2.4
@@ -527,7 +525,7 @@ while not done and start == 1:
     pygame.display.flip()
 
     # 60 fps
-    clock.tick(144)
+    clock.tick(60)
 
 # Quit
 pygame.quit()
