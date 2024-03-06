@@ -9,6 +9,8 @@ screen = pygame.display.set_mode(size) # Membuat layar permainan dengan ukuran y
 pygame.display.set_caption("Trash Guardian") # Memberi judul pada jendela permainan
 done = False # Variabel untuk menentukan apakah permainan sudah selesai atau belum
 clock = pygame.time.Clock() # Objek clock untuk mengontrol kecepatan permainan
+icon = pygame.image.load('Kerapu.png') # Mengubah icon permainan
+pygame.display.set_icon(icon) # Menampilkan icon permainan
 
 # Defines general colours
 SKY = (150, 240, 255) # Warna langit 
@@ -269,9 +271,9 @@ while not done and start == 1:
 
     # Bin movement ---
     if key == "Left" and binSucc == False:  # Adds velocity leftward, normal speed
-        binvelocityx += -1.2
+        binvelocityx += -1.0
     if key == "Right" and binSucc == False:  # Adds velocity rightward, normal speed
-        binvelocityx += 1.2
+        binvelocityx += 1.0
     if key == "Left" and binSucc == True:  # Adds velocity leftward, succ speed
         binvelocityx += -0.935
     if key == "Right" and binSucc == True:  # Adds velocity rightward, succ speed
@@ -525,7 +527,7 @@ while not done and start == 1:
     pygame.display.flip()
 
     # 60 fps
-    clock.tick(60)
+    clock.tick(144)
 
 # Quit
 pygame.quit()
