@@ -269,13 +269,13 @@ while not done and start == 1:
 
     # Bin movement ---
     if key == "Left" and binSucc == False:  # Adds velocity leftward, normal speed
-        binvelocityx += -1.0
+        binvelocityx += -1.2
     if key == "Right" and binSucc == False:  # Adds velocity rightward, normal speed
-        binvelocityx += 1.0
+        binvelocityx += 1.2
     if key == "Left" and binSucc == True:  # Adds velocity leftward, succ speed
-        binvelocityx += -1.0
+        binvelocityx += -0.9
     if key == "Right" and binSucc == True:  # Adds velocity rightward, succ speed
-        binvelocityx += 1.0
+        binvelocityx += 0.9
 
     if binSucc == True and binvelocityx > 2.4:  # Sets a cap on rightward velocity at 2.4 while succing
         binvelocityx = 2.4
